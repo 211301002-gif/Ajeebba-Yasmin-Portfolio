@@ -1,182 +1,1247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajeebba Yasmin | Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeebba Yasmin | Portfolio</title>
 
-        /* Layout */
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        /* Sidebar */
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #fafafa;
+        color: #222;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: white;
+        border-right: 1px solid #ddd;
+        padding: 30px 22px;
+        position: fixed;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .role {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Sidebar buttons */
+    .btn {
+        display: block;
+        text-align: center;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        background: #005fcc;
+    }
+
+    /* Navigation */
+    .nav a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 0;
+        color: #333;
+        font-size: 15px;
+    }
+    .nav a:hover {
+        color: #007bff;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .main {
+        margin-left: 260px;
+        padding: 40px 50px;
+        width: calc(100% - 260px);
+    }
+
+    .section {
+        margin-bottom: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* ---------- TIMELINE STYLE ---------- */
+    .timeline {
+        border-left: 3px solid #007bff;
+        margin-left: 20px;
+        padding-left: 25px;
+    }
+    .timeline .item {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .timeline .item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #007bff;
+        border-radius: 50%;
+        position: absolute;
+        left: -32px;
+        top: 3px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* ---------- PROJECT CARDS WITH IMAGES ---------- */
+    .project-card {
+        display: flex;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .project-card img {
+        width: 160px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 15px 20px;
+    }
+
+    .project-info h3 {
+        margin: 0 0 5px;
+        font-size: 17px;
+    }
+
+    .skills span {
+        background: #eef3ff;
+        padding: 7px 12px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px solid #cddcff;
+        display: inline-block;
+        font-size: 13px;
+        color: #0044aa;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
         .sidebar {
-            width: 260px;
-            background: #f5f7fa;
-            padding: 30px 20px;
-            border-right: 1px solid #ddd;
-            position: fixed;
-            height: 100%;
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-bottom: 1px solid #ddd;
         }
-
-        .sidebar h2 {
-            margin-top: 0;
-        }
-
-        .nav a {
-            display: block;
-            text-decoration: none;
-            padding: 8px 0;
-            color: #444;
-            font-size: 15px;
-        }
-
-        .nav a:hover {
-            color: #0066ff;
-        }
-
-        /* Main Content */
         .main {
-            margin-left: 260px;
-            padding: 40px;
-            width: calc(100% - 260px);
+            margin-left: 0;
+            width: 100%;
         }
-
-        h1, h2 {
-            font-weight: 600;
+        .project-card {
+            flex-direction: column;
         }
-
-        .section {
-            margin-bottom: 50px;
+        .project-card img {
+            width: 100%;
+            height: 180px;
         }
-
-        .project {
-            background: #f9fbff;
-            border-left: 4px solid #007bff;
-            padding: 12px 16px;
-            margin-bottom: 15px;
-        }
-
-        .skills span {
-            background: #eef1f7;
-            padding: 6px 12px;
-            margin: 5px;
-            display: inline-block;
-            border-radius: 4px;
-        }
-
-        /* Mobile */
-        @media(max-width: 800px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-            .main {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- ---------- SIDEBAR ---------- -->
+<div class="sidebar">
+    <h1>Ajeebba Yasmin</h1>
+    <div class="role">Data Scientist</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Ajeebba Yasmin</h2>
-        <p>Data Scientist</p>
-        <div class="nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+    <!-- Buttons -->
+    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn" href="https://github.com/211301002-gif">GitHub Profile</a>
+    <a class="btn" href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">LinkedIn</a>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- ---------- MAIN CONTENT ---------- -->
+<div class="main">
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+           An enthusiastic and self-motivated Data Scientist with hands-on experience in analytics, statistical modeling, and Python
+based data workflows. Skilled in translating complex business requirements into analytical solutions through data-driven
+ insights, visualization, and storytelling. Proficient in Python, SQL, and BI tools with a strong foundation in regression, time
+series forecasting, and machine learning. Adept at collaborating with cross-functional teams to deliver actionable insights
+ through dashboards. Known for meticulous attention to detail, logical problem-solving, and a continuous improvement
+ mindset.
+        </p>
+    </section>
+
+    <!-- PROJECTS (Timeline + Cards with Images) -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="timeline">
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Apple App Store EDA</h3>
+                        <p>Revenue insights, Python visualization, data cleaning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Adventure Works Power BI</h3>
+                        <p>DAX, star schema, fully interactive dashboards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Spam Detection NLP App</h3>
+                        <p>Streamlit app with ML pipeline and real-time predictions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Stock Forecasting (LSTM)</h3>
+                        <p>LSTM-based stock prediction with Streamlit visualization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Car Plate Blurrer</h3>
+                        <p>OpenCV app for automatic plate detection and blurring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Personalized Dietary Plans</h3>
+                        <p>Nutrition optimization system for elderly populations.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span>
+            <span>Power BI</span><span>DAX</span><span>TensorFlow</span>
+            <span>Streamlit</span><span>EDA</span><span>NLP</span><span>ML</span>
+        </div>
+    </section>
+
+    <!-- EDUCATION (TIMELINE) -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="timeline">
+
+            <div class="item">
+                <h3>B.Tech — Rajalakshmi Engineering College</h3>
+                <p>Food Technology</p>
+            </div>
+
+            <div class="item">
+                <h3>Higher Secondary — SBOA Matriculation School</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
+        <p>Phone: +91 97896 36875</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">Click Here</a></p>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeebba Yasmin | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #fafafa;
+        color: #222;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: white;
+        border-right: 1px solid #ddd;
+        padding: 30px 22px;
+        position: fixed;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .role {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Sidebar buttons */
+    .btn {
+        display: block;
+        text-align: center;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        background: #005fcc;
+    }
+
+    /* Navigation */
+    .nav a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 0;
+        color: #333;
+        font-size: 15px;
+    }
+    .nav a:hover {
+        color: #007bff;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .main {
+        margin-left: 260px;
+        padding: 40px 50px;
+        width: calc(100% - 260px);
+    }
+
+    .section {
+        margin-bottom: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* ---------- TIMELINE STYLE ---------- */
+    .timeline {
+        border-left: 3px solid #007bff;
+        margin-left: 20px;
+        padding-left: 25px;
+    }
+    .timeline .item {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .timeline .item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #007bff;
+        border-radius: 50%;
+        position: absolute;
+        left: -32px;
+        top: 3px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* ---------- PROJECT CARDS WITH IMAGES ---------- */
+    .project-card {
+        display: flex;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .project-card img {
+        width: 160px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 15px 20px;
+    }
+
+    .project-info h3 {
+        margin: 0 0 5px;
+        font-size: 17px;
+    }
+
+    .skills span {
+        background: #eef3ff;
+        padding: 7px 12px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px solid #cddcff;
+        display: inline-block;
+        font-size: 13px;
+        color: #0044aa;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+        .main {
+            margin-left: 0;
+            width: 100%;
+        }
+        .project-card {
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ---------- SIDEBAR ---------- -->
+<div class="sidebar">
+    <h1>Ajeebba Yasmin</h1>
+    <div class="role">Data Scientist</div>
+
+    <!-- Buttons -->
+    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn" href="https://github.com/211301002-gif">GitHub Profile</a>
+    <a class="btn" href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">LinkedIn</a>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="main">
+<!-- ---------- MAIN CONTENT ---------- -->
+<div class="main">
 
-        <section id="about" class="section">
-            <h1>About Me</h1>
-            <p>
-                Enthusiastic and self-motivated Data Scientist with hands-on experience in
-                analytics, machine learning, NLP, and data visualization. Skilled in Python,
-                SQL, Streamlit, and Power BI with strong analytical and storytelling abilities.
-            </p>
-        </section>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            Self-driven Data Scientist skilled in Python, ML, NLP, EDA, and Power BI.
+            Strong analytical thinking and passion for creating real-world solutions.
+        </p>
+    </section>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
+    <!-- PROJECTS (Timeline + Cards with Images) -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
 
-            <div class="project">
-                <strong>📱 Apple App Store EDA & Revenue Insights</strong>
-                <p>Data cleaning, exploratory analysis, revenue estimation using Python.</p>
+        <div class="timeline">
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Apple App Store EDA</h3>
+                        <p>Revenue insights, Python visualization, data cleaning.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="project">
-                <strong>📊 Adventure Works — Power BI Dashboards</strong>
-                <p>Data modeling, DAX measures, 5 interactive dashboards.</p>
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Adventure Works Power BI</h3>
+                        <p>DAX, star schema, fully interactive dashboards.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="project">
-                <strong>✉️ Spam Detection (NLP + Streamlit)</strong>
-                <p>Email/SMS classification using Naïve Bayes with real-time UI.</p>
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Spam Detection NLP App</h3>
+                        <p>Streamlit app with ML pipeline and real-time predictions.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="project">
-                <strong>📈 Stock Market Forecasting (LSTM)</strong>
-                <p>Time-series forecasting dashboard using TensorFlow.</p>
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Stock Forecasting (LSTM)</h3>
+                        <p>LSTM-based stock prediction with Streamlit visualization.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="project">
-                <strong>🚗 Car Plate Blurrer (OpenCV)</strong>
-                <p>Automatic license plate detection and blurring for privacy.</p>
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Car Plate Blurrer</h3>
+                        <p>OpenCV app for automatic plate detection and blurring.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="project">
-                <strong>🥗 Personalized Dietary Plan System</strong>
-                <p>Nutrition optimization and health-focused meal planning tool.</p>
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Personalized Dietary Plans</h3>
+                        <p>Nutrition optimization system for elderly populations.</p>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
-                <span>Seaborn</span><span>Scikit-Learn</span><span>NLP</span>
-                <span>TensorFlow</span><span>Streamlit</span><span>Power BI</span>
-                <span>DAX</span><span>SQL</span><span>EDA</span>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span>
+            <span>Power BI</span><span>DAX</span><span>TensorFlow</span>
+            <span>Streamlit</span><span>EDA</span><span>NLP</span><span>ML</span>
+        </div>
+    </section>
+
+    <!-- EDUCATION (TIMELINE) -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="timeline">
+
+            <div class="item">
+                <h3>B.Tech — Rajalakshmi Engineering College</h3>
+                <p>Food Technology</p>
             </div>
-        </section>
 
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <p><strong>B.Tech – Rajalakshmi Engineering College</strong><br>Food Technology</p>
-            <p><strong>HSC – SBOA Matriculation School</strong></p>
-        </section>
+            <div class="item">
+                <h3>Higher Secondary — SBOA Matriculation School</h3>
+            </div>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
-            <p>Phone: +91 97896 36875</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">View Profile</a></p>
-        </section>
+        </div>
+    </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
+        <p>Phone: +91 97896 36875</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">Click Here</a></p>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeebba Yasmin | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #fafafa;
+        color: #222;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: white;
+        border-right: 1px solid #ddd;
+        padding: 30px 22px;
+        position: fixed;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .role {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Sidebar buttons */
+    .btn {
+        display: block;
+        text-align: center;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        background: #005fcc;
+    }
+
+    /* Navigation */
+    .nav a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 0;
+        color: #333;
+        font-size: 15px;
+    }
+    .nav a:hover {
+        color: #007bff;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .main {
+        margin-left: 260px;
+        padding: 40px 50px;
+        width: calc(100% - 260px);
+    }
+
+    .section {
+        margin-bottom: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* ---------- TIMELINE STYLE ---------- */
+    .timeline {
+        border-left: 3px solid #007bff;
+        margin-left: 20px;
+        padding-left: 25px;
+    }
+    .timeline .item {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .timeline .item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #007bff;
+        border-radius: 50%;
+        position: absolute;
+        left: -32px;
+        top: 3px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* ---------- PROJECT CARDS WITH IMAGES ---------- */
+    .project-card {
+        display: flex;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .project-card img {
+        width: 160px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 15px 20px;
+    }
+
+    .project-info h3 {
+        margin: 0 0 5px;
+        font-size: 17px;
+    }
+
+    .skills span {
+        background: #eef3ff;
+        padding: 7px 12px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px solid #cddcff;
+        display: inline-block;
+        font-size: 13px;
+        color: #0044aa;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+        .main {
+            margin-left: 0;
+            width: 100%;
+        }
+        .project-card {
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ---------- SIDEBAR ---------- -->
+<div class="sidebar">
+    <h1>Ajeebba Yasmin</h1>
+    <div class="role">Data Scientist</div>
+
+    <!-- Buttons -->
+    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn" href="https://github.com/211301002-gif">GitHub Profile</a>
+    <a class="btn" href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">LinkedIn</a>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </div>
+</div>
+
+<!-- ---------- MAIN CONTENT ---------- -->
+<div class="main">
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            Self-driven Data Scientist skilled in Python, ML, NLP, EDA, and Power BI.
+            Strong analytical thinking and passion for creating real-world solutions.
+        </p>
+    </section>
+
+    <!-- PROJECTS (Timeline + Cards with Images) -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="timeline">
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Apple App Store EDA</h3>
+                        <p>Revenue insights, Python visualization, data cleaning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Adventure Works Power BI</h3>
+                        <p>DAX, star schema, fully interactive dashboards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Spam Detection NLP App</h3>
+                        <p>Streamlit app with ML pipeline and real-time predictions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Stock Forecasting (LSTM)</h3>
+                        <p>LSTM-based stock prediction with Streamlit visualization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Car Plate Blurrer</h3>
+                        <p>OpenCV app for automatic plate detection and blurring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Personalized Dietary Plans</h3>
+                        <p>Nutrition optimization system for elderly populations.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span>
+            <span>Power BI</span><span>DAX</span><span>TensorFlow</span>
+            <span>Streamlit</span><span>EDA</span><span>NLP</span><span>ML</span>
+        </div>
+    </section>
+
+    <!-- EDUCATION (TIMELINE) -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="timeline">
+
+            <div class="item">
+                <h3>B.Tech — Rajalakshmi Engineering College</h3>
+                <p>Food Technology</p>
+            </div>
+
+            <div class="item">
+                <h3>Higher Secondary — SBOA Matriculation School</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
+        <p>Phone: +91 97896 36875</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">Click Here</a></p>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeebba Yasmin | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #fafafa;
+        color: #222;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: white;
+        border-right: 1px solid #ddd;
+        padding: 30px 22px;
+        position: fixed;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .role {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Sidebar buttons */
+    .btn {
+        display: block;
+        text-align: center;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        background: #005fcc;
+    }
+
+    /* Navigation */
+    .nav a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 0;
+        color: #333;
+        font-size: 15px;
+    }
+    .nav a:hover {
+        color: #007bff;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .main {
+        margin-left: 260px;
+        padding: 40px 50px;
+        width: calc(100% - 260px);
+    }
+
+    .section {
+        margin-bottom: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* ---------- TIMELINE STYLE ---------- */
+    .timeline {
+        border-left: 3px solid #007bff;
+        margin-left: 20px;
+        padding-left: 25px;
+    }
+    .timeline .item {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .timeline .item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #007bff;
+        border-radius: 50%;
+        position: absolute;
+        left: -32px;
+        top: 3px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* ---------- PROJECT CARDS WITH IMAGES ---------- */
+    .project-card {
+        display: flex;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .project-card img {
+        width: 160px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 15px 20px;
+    }
+
+    .project-info h3 {
+        margin: 0 0 5px;
+        font-size: 17px;
+    }
+
+    .skills span {
+        background: #eef3ff;
+        padding: 7px 12px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px solid #cddcff;
+        display: inline-block;
+        font-size: 13px;
+        color: #0044aa;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+        .main {
+            margin-left: 0;
+            width: 100%;
+        }
+        .project-card {
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ---------- SIDEBAR ---------- -->
+<div class="sidebar">
+    <h1>Ajeebba Yasmin</h1>
+    <div class="role">Data Scientist</div>
+
+    <!-- Buttons -->
+    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn" href="https://github.com/211301002-gif">GitHub Profile</a>
+    <a class="btn" href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">LinkedIn</a>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- ---------- MAIN CONTENT ---------- -->
+<div class="main">
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            Self-driven Data Scientist skilled in Python, ML, NLP, EDA, and Power BI.
+            Strong analytical thinking and passion for creating real-world solutions.
+        </p>
+    </section>
+
+    <!-- PROJECTS (Timeline + Cards with Images) -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="timeline">
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Apple App Store EDA</h3>
+                        <p>Revenue insights, Python visualization, data cleaning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Adventure Works Power BI</h3>
+                        <p>DAX, star schema, fully interactive dashboards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Spam Detection NLP App</h3>
+                        <p>Streamlit app with ML pipeline and real-time predictions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Stock Forecasting (LSTM)</h3>
+                        <p>LSTM-based stock prediction with Streamlit visualization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Car Plate Blurrer</h3>
+                        <p>OpenCV app for automatic plate detection and blurring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="">
+                    <div class="project-info">
+                        <h3>Personalized Dietary Plans</h3>
+                        <p>Nutrition optimization system for elderly populations.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span>
+            <span>Power BI</span><span>DAX</span><span>TensorFlow</span>
+            <span>Streamlit</span><span>EDA</span><span>NLP</span><span>ML</span>
+        </div>
+    </section>
+
+    <!-- EDUCATION (TIMELINE) -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="timeline">
+
+            <div class="item">
+                <h3>B.Tech — Rajalakshmi Engineering College</h3>
+                <p>Food Technology</p>
+            </div>
+
+            <div class="item">
+                <h3>Higher Secondary — SBOA Matriculation School</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
+        <p>Phone: +91 97896 36875</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">Click Here</a></p>
+    </section>
+
 </div>
 
 </body>
