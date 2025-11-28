@@ -1,164 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ajeebba Yasmin — Data Scientist</title>
-  <meta name="description" content="Portfolio of Ajeebba Yasmin — Data Scientist. Projects: App Store EDA, Power BI Adventure Works, Spam Detection Web App, Stock Forecasting, Car Plate Blurrer, Personalized Diet Plans." />
-  <style>
-    :root{--bg:#ffffff;--muted:#6b7280;--accent:#0f172a;--accent-2:#0b84ff;--card:#f8fafc;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--accent);font-family:var(--font, Inter),system-ui,Segoe UI,Roboto,Helvetica,Arial}
-    .container{max-width:980px;margin:40px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .avatar{width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),#00c2ff);display:grid;place-items:center;color:white;font-weight:700;font-size:22px}
-    h1{margin:0;font-size:22px}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
-    .grid{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:28px}
-    main{background:transparent}
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
-    section h2{margin:0 0 10px;font-size:16px}
-    .about p{color:var(--muted);line-height:1.5}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:white;padding:8px 10px;border-radius:999px;border:1px solid #eef2f7;font-size:13px;color:var(--accent)}
-    .projects{display:grid;gap:12px}
-    .proj{padding:12px;border-radius:8px;background:white;border:1px solid #eef2f7}
-    .proj h3{margin:0;font-size:15px}
-    .meta{font-size:13px;color:var(--muted);margin-top:6px}
-    .side-section{display:flex;flex-direction:column;gap:14px}
-    .contact a{display:block;color:var(--accent);text-decoration:none}
-    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
-    /* responsive */
-    @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:56px;height:56px;font-size:18px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajeebba Yasmin | Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: #f5f7fa;
+            padding: 30px 20px;
+            border-right: 1px solid #ddd;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+        }
+
+        .nav a {
+            display: block;
+            text-decoration: none;
+            padding: 8px 0;
+            color: #444;
+            font-size: 15px;
+        }
+
+        .nav a:hover {
+            color: #0066ff;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 260px;
+            padding: 40px;
+            width: calc(100% - 260px);
+        }
+
+        h1, h2 {
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .project {
+            background: #f9fbff;
+            border-left: 4px solid #007bff;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+        }
+
+        .skills span {
+            background: #eef1f7;
+            padding: 6px 12px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        /* Mobile */
+        @media(max-width: 800px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .main {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="avatar">AY</div>
-        <div>
-          <h1>Ajeebba Yasmin</h1>
-          <p class="lead">Data Scientist — Python • ML • NLP • Power BI • Streamlit</p>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Ajeebba Yasmin</h2>
+        <p>Data Scientist</p>
+        <div class="nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
         </div>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <div class="grid">
-      <main>
-        <section id="about" class="card about">
-          <h2>About</h2>
-          <p>
-            An enthusiastic and self-motivated Data Scientist with hands-on experience in analytics, statistical modeling, and Python-based data workflows. Skilled in translating complex business requirements into analytical solutions through data-driven insights, visualization, and storytelling. Proficient in Python, SQL, and BI tools with a strong foundation in regression, time-series forecasting, and machine learning. Adept at collaborating with cross-functional teams to deliver actionable insights through dashboards. Known for meticulous attention to detail, logical problem-solving, and a continuous improvement mindset.
-          </p>
-        </section>
-
-        <section id="projects" class="card" style="margin-top:16px">
-          <h2>Selected Projects</h2>
-          <div class="projects">
-            <div class="proj">
-              <h3>Apple App Store — Exploratory Data Analysis & Revenue Insights</h3>
-              <div class="meta">EDA, revenue estimation, Python (Pandas, Matplotlib)</div>
-              <p class="meta" style="margin-top:8px;color:var(--muted)">Performed data cleaning, handled missing values and duplicates, analyzed pricing, ratings and genres to surface top-earning apps and actionable visualizations.</p>
-            </div>
-
-            <div class="proj">
-              <h3>Adventure Works — Power BI Dashboards</h3>
-              <div class="meta">Power BI, DAX, data modelling</div>
-              <p class="meta">Designed star/snowflake schema, created DAX measures and delivered five interactive dashboards for product analysis, customer profiling, geographic mapping and executive reporting.</p>
-            </div>
-
-            <div class="proj">
-              <h3>Spam Detection Web App (NLP)</h3>
-              <div class="meta">Streamlit, Multinomial Naïve Bayes, CountVectorizer</div>
-              <p class="meta">Built and deployed a Streamlit app for email/message classification with real-time predictions and confidence scores.</p>
-            </div>
-
-            <div class="proj">
-              <h3>Stock Market Forecasting (LSTM)</h3>
-              <div class="meta">TensorFlow, LSTM, Streamlit</div>
-              <p class="meta">Built time-series forecasting dashboard to predict Indian stock prices with preprocessing, scaling, and interactive visualizations.</p>
-            </div>
-
-            <div class="proj">
-              <h3>Car Plate Blurrer</h3>
-              <div class="meta">OpenCV, Streamlit</div>
-              <p class="meta">Developed a real-time Streamlit app using Haar cascades to detect and blur license plates for privacy-preserving image processing.</p>
-            </div>
-
-            <div class="proj">
-              <h3>Personalized Dietary Plans for Elderly</h3>
-              <div class="meta">Data-driven nutrition planning, software tool</div>
-              <p class="meta">Designed personalized meal-planning tool focused on bone and cognitive health, integrating nutrient optimization and user-friendly tracking.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="education" class="card" style="margin-top:16px">
-          <h2>Education</h2>
-          <p style="margin:0"><strong>Rajalakshmi Engineering College</strong> — Bachelor of Technology, Food Technology</p>
-          <p style="margin:6px 0 0;color:var(--muted)">Higher Secondary — SBOA Matriculation Higher Secondary School</p>
-        </section>
-      </main>
-
-      <aside class="side-section">
-        <div class="card contact">
-          <h2>Contact</h2>
-          <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a>
-          <a href="tel:+919789636875">+91 97896 36875</a>
-          <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249" target="_blank">linkedin.com/in/ajeebba-yasmin</a>
-          <p style="margin-top:10px;color:var(--muted)">Download Resume: <a href="resume.pdf" style="color:var(--accent-2);text-decoration:none">resume.pdf</a> (rename & upload to repo)</p>
-        </div>
-
-        <div class="card">
-          <h2 id="skills">Skills</h2>
-          <div class="skills">
-            <span class="chip">Python</span>
-            <span class="chip">Pandas</span>
-            <span class="chip">NumPy</span>
-            <span class="chip">Matplotlib</span>
-            <span class="chip">Seaborn</span>
-            <span class="chip">Scikit-learn</span>
-            <span class="chip">TensorFlow</span>
-            <span class="chip">Streamlit</span>
-            <span class="chip">Power BI</span>
-            <span class="chip">DAX</span>
-            <span class="chip">NLP</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Feature Engineering</span>
-            <span class="chip">Time-series</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Languages</h2>
-          <p style="margin:0;color:var(--muted)">Tamil • English</p>
-        </div>
-
-        <div class="card">
-          <h2>Availability</h2>
-          <p style="margin:0;color:var(--muted)">Open to Data Scientist / Analytics roles — Immediate</p>
-        </div>
-      </aside>
     </div>
 
-    <footer>
-      © <span id="year"></span> Ajeebba Yasmin — Built with HTML & CSS • Hosted on GitHub Pages
-    </footer>
-  </div>
+    <!-- Main Content -->
+    <div class="main">
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
-  </script>
+        <section id="about" class="section">
+            <h1>About Me</h1>
+            <p>
+                Enthusiastic and self-motivated Data Scientist with hands-on experience in
+                analytics, machine learning, NLP, and data visualization. Skilled in Python,
+                SQL, Streamlit, and Power BI with strong analytical and storytelling abilities.
+            </p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <strong>📱 Apple App Store EDA & Revenue Insights</strong>
+                <p>Data cleaning, exploratory analysis, revenue estimation using Python.</p>
+            </div>
+
+            <div class="project">
+                <strong>📊 Adventure Works — Power BI Dashboards</strong>
+                <p>Data modeling, DAX measures, 5 interactive dashboards.</p>
+            </div>
+
+            <div class="project">
+                <strong>✉️ Spam Detection (NLP + Streamlit)</strong>
+                <p>Email/SMS classification using Naïve Bayes with real-time UI.</p>
+            </div>
+
+            <div class="project">
+                <strong>📈 Stock Market Forecasting (LSTM)</strong>
+                <p>Time-series forecasting dashboard using TensorFlow.</p>
+            </div>
+
+            <div class="project">
+                <strong>🚗 Car Plate Blurrer (OpenCV)</strong>
+                <p>Automatic license plate detection and blurring for privacy.</p>
+            </div>
+
+            <div class="project">
+                <strong>🥗 Personalized Dietary Plan System</strong>
+                <p>Nutrition optimization and health-focused meal planning tool.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+                <span>Seaborn</span><span>Scikit-Learn</span><span>NLP</span>
+                <span>TensorFlow</span><span>Streamlit</span><span>Power BI</span>
+                <span>DAX</span><span>SQL</span><span>EDA</span>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>B.Tech – Rajalakshmi Engineering College</strong><br>Food Technology</p>
+            <p><strong>HSC – SBOA Matriculation School</strong></p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:yasminajeebba@gmail.com">yasminajeebba@gmail.com</a></p>
+            <p>Phone: +91 97896 36875</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ajeebba-yasmin-463102249">View Profile</a></p>
+        </section>
+
+    </div>
+</div>
+
 </body>
 </html>
