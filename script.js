@@ -6,6 +6,7 @@ const projects = [
     date: "October 2025",
     description: "Real-time Streamlit web app using OpenCV to detect and blur vehicle license plates in uploaded images. Uses Haar Cascade–based detection and Gaussian blur filters with adjustable parameters; supports live upload, preview and secure one-click download.",
     repoUrl: "https://github.com/211301002-gif/Car-Plate-Blurring-",
+    stremlitUrl : "https://car-plate-blurrer-ajeebba.streamlit.app/",
     tags: ["Streamlit", "OpenCV", "Privacy", "Python"]
   },
   {
@@ -13,6 +14,7 @@ const projects = [
     date: "October 2025",
     description: "Time-series forecasting dashboard using LSTM neural networks to predict Indian stock prices. Includes data preprocessing (MinMaxScaler), interactive Streamlit visualizations, and a TensorFlow pipeline for automated data acquisition, training and inference.",
     repoUrl: "https://github.com/211301002-gif/stock-market-",
+    stremlitUrl : "https://stock-market-prediction-ajeebba-yasmin.streamlit.app/",
     tags: ["LSTM", "TensorFlow", "Time Series", "Streamlit"]
   },
   {
@@ -20,6 +22,7 @@ const projects = [
     date: "2025",
     description: "Streamlit web app to classify emails/messages as spam or legitimate. Implements Multinomial Naïve Bayes with CountVectorizer for preprocessing and provides real-time predictions with confidence scoring.",
     repoUrl: "https://github.com/211301002-gif/spam-detector",
+    stremlitUrl : "https://spam-detector-ajeebba-yasmin.streamlit.app/",
     tags: ["NLP", "Naive Bayes", "Streamlit", "Python"]
   },
   {
